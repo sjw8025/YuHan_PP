@@ -1,8 +1,5 @@
-
-#pragma comment(lib, "Opengl32.lib")
-
-#include <GLFW/glfw3.h>
-#include <iostream>
+#include "stdafx.h"
+#include "MList.h"
 
 float verticalMoveFactor = 0.0f;
 float horizontalMoveFactor = 0.0f;
@@ -69,53 +66,39 @@ void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
 	}
 }
 
+
+
+int intiallize()
+{
+	MList<int> list:
+	
+
+	return 0;
+}
+
+int initallize()
+{
+
+	return 0;
+}
+
+int release()
+{
+
+	return 0;
+}
+
+int update()
+{
+
+	return 0;
+}
+
 //별 그리기
 int render() //화면에 뭔가 그림
 {
-	//삼각형을 그림
-	glBegin(GL_TRIANGLES);
-	//흰색
-	glColor3f(1.0f, 1.0f, 1.0f);
-	//2d 는 double 2f 는 float
-	glVertex2f((0.5f + horizontalMoveFactor) * scaleFactor, (0.3f + verticalMoveFactor) * scaleFactor);
-
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex2f((-0.5f + horizontalMoveFactor) * scaleFactor, (0.3f + verticalMoveFactor) * scaleFactor);
-
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex2f((0.0f + horizontalMoveFactor) * scaleFactor, (-0.2f + verticalMoveFactor) * scaleFactor);
-	glEnd();
-
-	//삼각형을 그림
-	glBegin(GL_TRIANGLES);
-	//흰색
-	glColor3f(1.0f, 1.0f, 1.0f);
-	//2d 는 double 2f 는 float
-	glVertex2f((0.0f + horizontalMoveFactor) * scaleFactor, (0.7f + verticalMoveFactor) * scaleFactor);
-
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex2f((0.2f + horizontalMoveFactor) * scaleFactor, (-0.1f + verticalMoveFactor) * scaleFactor);
-
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex2f((-0.4f + horizontalMoveFactor) * scaleFactor, (-0.5f + verticalMoveFactor) * scaleFactor);
-
-	glEnd();
-
-	//삼각형을 그림
-	glBegin(GL_TRIANGLES);
-	//흰색
-	glColor3f(1.0f, 1.0f, 1.0f);
-	//2d 는 double 2f 는 float
-	glVertex2f((0.0f + horizontalMoveFactor) * scaleFactor, (0.7f + verticalMoveFactor) * scaleFactor);
-
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex2f((0.4f + horizontalMoveFactor) * scaleFactor, (-0.5f + verticalMoveFactor) * scaleFactor);
-
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex2f((-0.2f + horizontalMoveFactor) * scaleFactor, (-0.1f + verticalMoveFactor) * scaleFactor);
-
-	glEnd();
-
+	glClearColor(0.1f, 0.2f, 0.5f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
 	return 0;
 }
 
@@ -143,13 +126,12 @@ int main(void)
 	while (!glfwWindowShouldClose(window))
 	{
 		glfwPollEvents();
-		glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
+		update();
 		render();
 
 		glfwSwapBuffers(window);
 	}
+
 
 	glfwTerminate();
 	return 0;
